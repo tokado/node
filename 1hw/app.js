@@ -1,6 +1,7 @@
 const fs = require('fs')
 const path = require('path')
 // Cтворення папок
+
 // fs.mkdir(path.join(__dirname,'main'), (err) => {
 //     if (err) {
 //         console.log(err);
@@ -35,14 +36,14 @@ let people = [
     }
 ]
 
-fs.writeFile(path.join(__dirname,'main/inPerson','inPerson.txt'), people[0] , (err) => {
+fs.writeFile(path.join(__dirname,'main/inPerson','inPerson.txt'), `${people.name}\n${people.age}\n${people.city}\n` , (err) => {
     if (err) {
         console.log(err);
         throw err;
     }
 } )
 
-fs.writeFile(path.join(__dirname,'main/online','online.txt'), people[1] , (err) => {
+fs.writeFile(path.join(__dirname,'main/online','online.txt'), `${people.name}\n${people.age}\n${people.city}\n`, (err) => {
     if (err) {
         console.log(err);
         throw err;
